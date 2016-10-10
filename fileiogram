@@ -1,0 +1,7 @@
+set terminal 'aqua' font 'Times-Roman,22'
+set boxwidth 0.2
+set style fill solid border -1  # border color: black
+set yrange [0:600]
+set ylabel 'I/O bandwidth (MB/sec)'
+plot "fileiodata" using 1:3:xtic(2) with boxes lc rgb "0x2280c9" notitle,\
+    "fileiodata" using 1:($3+20):3 with labels notitle
