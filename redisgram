@@ -1,0 +1,15 @@
+# set style fill solid 1
+# set style fill solid border -1
+set key horiz
+set key top right
+set terminal 'aqua' font 'Times-Roman,20'
+set style histogram clustered
+set style data histograms
+set style fill solid 0.8
+#set boxwidth 0.9
+set xtic rotate by -45 scale 0
+set yrange [0:80000]
+plot "redisdata" u 2:xtic(1) t "VM" lc rgb '0x132cad',\
+	 "" u 3 t "Docker on VM" lc rgb '0xe84809',\
+	 "" u 4 t "Bare metal" lc rgb '0x32a316' ,\
+	 "" u 5 t "Docker on bare metal" lc rgb '0xb208af'
