@@ -1,13 +1,16 @@
-set terminal 'aqua' font 'Times-Roman,20'
+set terminal 'aqua' font 'Times-Roman,25'
 set output 'utilization.pdf'
 # set title 'utilization'
-set xlabel 'cpu[millicore]' font "Times-Roman,20" #标定横坐标 
-set ylabel 'node number' font "Times-Roman, 20" #标定纵坐标
+set xlabel offset 0,0.5,0
+set xlabel 'CPU(millicore)' font "Times-Roman,25" #标定横坐标 
+set ylabel offset 2,0,0
+set ylabel 'Node number' font "Times-Roman, 25" #标定纵坐标
 set xrange [0:5000] #设定横轴范围 
 set yrange [0:4] #设定纵轴范围
 set ytics 1
-set key left top
-set tics font "Times-Roman,20"
+# set key horiz
+set key top left
+set tics font "Times-Roman,25"
 plot 'baseline' title 'baseline' with linespoints,\
 'common' title 'common' with linespoints,\
 'granularity' title 'granularity' with linespoints,\
