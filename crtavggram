@@ -1,0 +1,20 @@
+set terminal 'aqua' font 'Times-Roman,30'
+# set title 'utilization'
+set xlabel offset 0,0.5,0
+# set xlabel 'CPU(millicore)' font "Times-Roman,30" #标定横坐标 
+set ylabel offset 2,0,0
+set ylabel 'Total time(ms)' font "Times-Roman, 30" #标定纵坐标
+#set xtics 1
+# set key horiz
+set key top left
+set key font 'Times-Roman,25' 
+set key vertical maxrows 3
+set yrange[30:300]
+set tics font "Times-Roman,30"
+plot "crtavgdata" using 2:xtic(1) title '5 sum' with linespoints, \
+     "crtavgdata" using 3:xtic(1) title '10 sum' with linespoints, \
+     "crtavgdata" using 4:xtic(1) title '20 sum' with linespoints, \
+     "crtavgdata" using 5:xtic(1) title '40 sum' with linespoints, \
+     "crtavgdata" using 6:xtic(1) title '80 sum' with linespoints, \
+     "crtavgdata" using 7:xtic(1) title '160 sum' with linespoints, \
+     "crtavgdata" using 8:xtic(1) title '320 sum' with linespoints, \
